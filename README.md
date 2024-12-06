@@ -23,7 +23,7 @@ This project provides a tool to copy nodes from one Zookeeper instance to anothe
 ## Usage
 
 ```sh
-./zkcopy -source-zk <source_zk_connection_string> -destination-zk <destination_zk_connection_string> -source-path <source_path> -destination-path <destination_path> [-update]
+./zkcopy -source-zk <source_zk_connection_string> -destination-zk <destination_zk_connection_string> -source-path <source_path> -destination-path <destination_path> [-delete-before-copy]
 ```
 
 ### Arguments
@@ -32,12 +32,12 @@ This project provides a tool to copy nodes from one Zookeeper instance to anothe
 - `-destination-zk`: Destination Zookeeper connection string (e.g., `localhost:2182`)
 - `-source-path`: Source Zookeeper path (must start with `/`)
 - `-destination-path`: Destination Zookeeper path (must start with `/`)
-- `-update`: Update existing nodes without deletion (optional)
+- `-delete-before-copy`: Delete destination path before copying (optional, default is `false`)
 
 ### Example
 
 ```sh
-./zkcopy -source-zk localhost:2181 -destination-zk localhost:2182 -source-path /sourceNode -destination-path /destNode -update
+./zkcopy -source-zk localhost:2181 -destination-zk localhost:2182 -source-path /sourceNode -destination-path /destNode -delete-before-copy
 ```
 
 ## Development

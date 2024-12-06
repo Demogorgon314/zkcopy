@@ -68,7 +68,7 @@ func main() {
 	flag.StringVar(&dstZk, "destination-zk", "", "Destination Zookeeper connection string")
 	flag.StringVar(&srcPath, "source-path", "", "Source Zookeeper path")
 	flag.StringVar(&dstPath, "destination-path", "", "Destination Zookeeper path")
-	flag.BoolVar(&deleteBeforeCopy, "update", false, "Update existing nodes without deletion")
+	flag.BoolVar(&deleteBeforeCopy, "delete-before-copy", false, "Delete destination path before copying")
 	flag.Parse()
 
 	if srcZk == "" || dstZk == "" || srcPath == "" || dstPath == "" {
